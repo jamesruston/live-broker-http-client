@@ -1,12 +1,35 @@
 <div class="header">
     <h3 class="text-muted">live broker http client</h3>
 </div>
-<select ng-model="selectedEnvironment" ng-options="env for env in environments">
-    <option value="">-- choose environment --</option>
-</select>
+
 <url-bar></url-bar>
 
+<table class="table">
+    <tbody>
+        <tr>
+            <td>
+                Base
+            </td>
+            <td>
+                {{url.base}}
+            </td>
+        </tr>
+        <tr ng-repeat="request in url.requests">
+            <td>
+                Request
+            </td>
+            <td>
+                {{request}}
+            </td>
+            <td>
+                {{requestTypes}}
+            </td>
+        </tr>
+    </tbody>
+</table>
 
+<button class="btn btn-primary add-request" ng-click="addRequest()">Add request</button>
+<request-builder ng-repeat="request in url.requests" request="request" services="$parent.services"></request-builder>
 <div class="row marketing">
     <h4>Live Broker HTTP Client</h4>
 
