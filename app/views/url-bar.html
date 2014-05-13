@@ -1,0 +1,11 @@
+<div>
+    <select class="dropdown environment" ng-model="url.base" ng-options="url as env for (env, url) in environments" ng-change="envChanged()">
+        <option value="">-- choose environment --</option>
+    </select>
+    <input class="urlbar" type="text">
+
+    <div class="btn-group">
+        <button class="btn btn-default" ng-disabled="!url.base">Visit</button>
+        <button class="btn btn-default">Copy</button>
+    </div>
+</div>

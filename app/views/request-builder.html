@@ -1,0 +1,6 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <select ng-model="service" ng-options="service as service.service for service in services"></select>
+        <select ng-model="type" ng-options="type.endpoint as type.endpoint for type in types" ng-show="service"></select>
+    </div>
+</div>
